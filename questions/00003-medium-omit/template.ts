@@ -4,4 +4,4 @@ const myOmit = (obj: Record<string, unknown>, keys: string[]) => keys.reduce<Par
   return acc
 }, { ...obj })
 
-type MyOmit<T, K extends keyof T> = MyPick<T, Exclude<keyof T, K>>
+type MyOmit<T, K extends keyof T> = MyPick<T, MyExclude<keyof T, K>>
